@@ -24,3 +24,6 @@ hs_err_pid*
 replay_pid*
 /jLox/nbproject/private/
 /jLox/build/
+/jLox/nbproject
+/JLox/build.xml
+/JLox/manifest.mf
