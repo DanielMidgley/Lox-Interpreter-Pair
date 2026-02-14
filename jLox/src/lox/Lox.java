@@ -12,7 +12,7 @@ public class Lox {
     private static final Interpreter interpreter = new Interpreter();
     static boolean hadError = false;
     static boolean hadRuntimeError = false;
-    
+     
     public static void main(String[] args) throws IOException {
         if (args.length > 1) {
             System.out.println("Usage: jlox [script]");
@@ -52,6 +52,12 @@ public class Lox {
         List<Stmt> statements = parser.parse();
         
         // Stop if there was a syntax error.
+        if (hadError) return;
+        
+        Resolver resolver = new Resolver(interpreter);
+        resolver.resolve(statements);
+        
+        // Stop if there was a resolution error
         if (hadError) return;
         
         interpreter.interpret(statements);
