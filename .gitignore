@@ -27,3 +27,6 @@ replay_pid*
 /jLox/nbproject
 /JLox/build.xml
 /JLox/manifest.mf
+
+/cLox/*.exe
+/.vscode/
